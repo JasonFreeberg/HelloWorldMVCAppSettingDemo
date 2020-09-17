@@ -22,7 +22,7 @@ jobs:
       run: nuget restore
 
     - name: Publish to folder
-      run: msbuild /p:Configuration=Release /p:DeployOnBuild=true /t:WebPublish /t:pipelinePreDeployCopyAllFilesToOneFolder /p:WebPublishMethod=FileSystem /p:publishUrl=./published/ /p:PackageAsSingleFile=false
+      run: msbuild /p:Configuration=Release /p:DeployOnBuild=true /t:WebPublish /p:WebPublishMethod=FileSystem /p:publishUrl=./published/ /p:PackageAsSingleFile=false /t:pipelinePreDeployCopyAllFilesToOneFolder
 
     - name: list dirs
       run: ls -r
